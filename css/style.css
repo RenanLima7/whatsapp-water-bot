@@ -15,7 +15,7 @@ body {
 
 h3 {
   margin: 10px 0;
-  color: #2a5d84; /* Azul escuro para os títulos */
+  color: #2a5d84;
 }
 
 /* Cabeçalho */
@@ -33,15 +33,15 @@ header {
 /* Layout dos produtos */
 .produtos {
   display: flex;
-  justify-content: center; /* Centraliza os itens horizontalmente */
-  align-items: center; /* Centraliza os itens verticalmente */
+  justify-content: center;
+  align-items: center;
   gap: 20px;
-  flex-wrap: wrap; /* Permite que os produtos se ajustem em várias linhas quando necessário */
+  flex-wrap: wrap;
   width: 100%;
   max-width: 900px;
-  margin: 20px 20px; /* Margem nas laterais */
+  margin: 20px 20px;
   box-sizing: border-box;
-  padding: 0 10px; /* Adiciona espaçamento interno para não encostar nas bordas */
+  padding: 0 10px;
 }
 
 /* Estilo individual dos produtos */
@@ -49,45 +49,44 @@ header {
   background-color: #e0f7fa;
   padding: 20px;
   border-radius: 10px;
-  width: calc(33.33% - 20px); /* Ocupa 1/3 do espaço disponível em telas grandes */
+  width: calc(33.33% - 20px);
   text-align: center;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombras suaves */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  margin-bottom: 20px; /* Espaço entre os produtos */
+  margin-bottom: 20px;
 }
 
 .produto:hover {
-  background-color: #b2ebf2; /* Alteração no fundo ao passar o mouse */
-  transform: scale(1.05); /* Efeito de zoom suave */
+  background-color: #b2ebf2;
+  transform: scale(1.05);
 }
 
 .produto h3 {
   margin: 0;
-  color: #00796b; /* Azul mais forte para o texto */
-  font-size: 20px; /* Maior para destacar o nome */
+  color: #00796b;
+  font-size: 20px;
 }
 
-/* Aumentar ênfase nas imagens */
 .produto .produto-icon {
-  width: 120px; /* Aumenta a imagem */
-  height: 100px; /* Ajusta a altura */
+  width: 120px;
+  height: 100px;
   margin-bottom: 10px;
-  object-fit: contain; /* Garantir que a imagem se ajuste sem deformar */
+  object-fit: contain;
 }
 
-/* Estilo do botão de escolha (botões dos produtos) */
+/* Estilo do botão de escolha */
 button {
-  background-color: #007bff; /* Cor de fundo azul */
+  background-color: #007bff;
   color: white;
-  padding: 8px 15px; /* Diminui o padding */
+  padding: 8px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 14px; /* Diminui o tamanho da fonte */
+  font-size: 14px;
   margin-top: 10px;
   width: 100%;
   display: flex;
@@ -97,13 +96,12 @@ button {
 }
 
 button img {
-  width: 18px; /* Reduz o tamanho do ícone */
-  height: 18px; /* Reduz o tamanho do ícone */
+  width: 18px;
+  height: 18px;
 }
 
-/* Efeito de hover nos botões */
 button:hover {
-  background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+  background-color: #0056b3;
 }
 
 /* Estilo do popup */
@@ -116,15 +114,15 @@ button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #ffffff; /* Fundo branco para o popup */
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
-  color: #030538; /* Texto em tom escuro */
+  color: #030538;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave para destacar */
-  width: 80%; /* Largura fixa para melhor adaptação */
-  max-width: 400px; /* Max-width para manter o tamanho adequado */
-  z-index: 2; /* Garantir que o popup fique acima de outros elementos */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  max-width: 400px;
+  z-index: 2;
 }
 
 .popup-conteudo .popup-button-container {
@@ -135,7 +133,7 @@ button:hover {
 }
 
 .popup-conteudo button {
-  background-color: #00796b; /* Azul mais forte para o botão */
+  background-color: #00796b;
   color: white;
   width: auto;
   padding: 10px 20px;
@@ -144,19 +142,17 @@ button:hover {
 }
 
 .popup-conteudo button:hover {
-  background-color: #004d40; /* Tom mais escuro para o hover */
+  background-color: #004d40;
 }
 
-/* Botão de Cancelar (leva ao início) */
 .popup-conteudo .cancelar {
-  background-color: #d9534f; /* Cor vermelha para o botão de cancelar */
+  background-color: #d9534f;
 }
 
 .popup-conteudo .cancelar:hover {
-  background-color: #c9302c; /* Tom mais escuro de vermelho ao passar o mouse */
+  background-color: #c9302c;
 }
 
-/* Efeito de blur no fundo */
 .overlay {
   display: none;
   position: fixed;
@@ -165,13 +161,12 @@ button:hover {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px); /* Efeito de blur */
-  z-index: 1; /* Para ficar atrás do popup */
+  backdrop-filter: blur(5px);
+  z-index: 1;
 }
 
-/* Adicionar alguns estilos para o título do popup */
 .popup-conteudo h3 {
-  color: #00796b; /* Cor mais clara para o título */
+  color: #00796b;
   font-size: 22px;
   margin-bottom: 20px;
 }
@@ -181,7 +176,7 @@ button:hover {
   padding: 10px;
   margin: 10px 0;
   border-radius: 5px;
-  border: 1px solid #00796b; /* Cor do borda de acordo com o tema */
+  border: 1px solid #00796b;
   text-align: center;
   font-size: 16px;
 }
@@ -189,20 +184,20 @@ button:hover {
 /* Responsividade */
 @media (max-width: 768px) {
   .produtos {
-    flex-direction: column; /* Alinha os produtos na vertical em telas menores */
+    flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-left: 20px; /* Margem nas laterais */
-    margin-right: 20px; /* Margem nas laterais */
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .produto {
-    width: 80%; /* Deixa os produtos um pouco menores em telas menores */
+    width: 80%;
   }
 
   .produto .produto-icon {
-    width: 100px; /* Ícones maiores em telas pequenas */
-    height: 90px; /* Ajusta a altura */
+    width: 100px;
+    height: 90px;
   }
 
   .popup-conteudo {
@@ -211,13 +206,71 @@ button:hover {
 }
 
 @media (min-width: 769px) {
-  /* Quando a tela for maior que 768px, os produtos ficam lado a lado */
   .produtos {
     flex-wrap: wrap;
-    justify-content: center; /* Centraliza os produtos em telas grandes */
+    justify-content: center;
   }
 
   .produto {
-    width: calc(33.33% - 20px); /* Produtos ocupam 1/3 do espaço */
+    width: calc(33.33% - 20px);
+  }
+}
+
+/* Estilo do botão de fazer pedido */
+.irParaPedido {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 300px;
+}
+
+.irParaPedido:hover {
+  background-color: #0056b3;
+}
+
+.irParaPedido i {
+  margin-right: 10px;
+}
+
+/* Responsividade para o botão de fazer pedido */
+@media (max-width: 1200px) {
+  .irParaPedido {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 992px) {
+  .irParaPedido {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .irParaPedido {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .irParaPedido {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+  .irParaPedido {
+    max-width: 100%;
+    font-size: 14px;
+    padding: 10px;
   }
 }
