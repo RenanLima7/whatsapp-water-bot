@@ -13,116 +13,211 @@ body {
   box-sizing: border-box;
 }
 
-h2 {
-  margin-bottom: 20px;
-}
-
-button {
-  background-color: #007bff;
-  color: white;
-  padding: 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+h3 {
   margin: 10px 0;
-  width: 100%;
-  max-width: 300px;
+  color: #2a5d84; /* Azul escuro para os títulos */
 }
 
-button:hover {
-  background-color: #0056b3;
-}
-
-button i {
-  margin-right: 10px;
-}
-
-/* Estilo da logo */
-#logo {
+/* Cabeçalho */
+header {
   text-align: center;
   margin-bottom: 20px;
-  width: 100%;
 }
 
 #logo img {
   width: 100%;
-  max-width: 600px; /* Aumenta o tamanho máximo da logo */
+  max-width: 300px;
   height: auto;
 }
 
-/* Botão Fazer Pedido */
-.irParaPedido {
+/* Layout dos produtos */
+.produtos {
+  display: flex;
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
+  gap: 20px;
+  flex-wrap: wrap; /* Permite que os produtos se ajustem em várias linhas quando necessário */
   width: 100%;
-  max-width: 300px;
+  max-width: 900px;
+  margin: 20px 20px; /* Margem nas laterais */
+  box-sizing: border-box;
+  padding: 0 10px; /* Adiciona espaçamento interno para não encostar nas bordas */
+}
+
+/* Estilo individual dos produtos */
+.produto {
+  background-color: #e0f7fa;
+  padding: 20px;
+  border-radius: 10px;
+  width: calc(33.33% - 20px); /* Ocupa 1/3 do espaço disponível em telas grandes */
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombras suaves */
+  transition: all 0.3s ease;
+  margin-bottom: 20px; /* Espaço entre os produtos */
+}
+
+.produto:hover {
+  background-color: #b2ebf2; /* Alteração no fundo ao passar o mouse */
+  transform: scale(1.05); /* Efeito de zoom suave */
+}
+
+.produto h3 {
+  margin: 0;
+  color: #00796b; /* Azul mais forte para o texto */
+  font-size: 20px; /* Maior para destacar o nome */
+}
+
+/* Aumentar ênfase nas imagens */
+.produto .produto-icon {
+  width: 120px; /* Aumenta a imagem */
+  height: 100px; /* Ajusta a altura */
+  margin-bottom: 10px;
+  object-fit: contain; /* Garantir que a imagem se ajuste sem deformar */
+}
+
+/* Estilo do botão de escolha (botões dos produtos) */
+button {
+  background-color: #007bff; /* Cor de fundo azul */
+  color: white;
+  padding: 8px 15px; /* Diminui o padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px; /* Diminui o tamanho da fonte */
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+button img {
+  width: 18px; /* Reduz o tamanho do ícone */
+  height: 18px; /* Reduz o tamanho do ícone */
+}
+
+/* Efeito de hover nos botões */
+button:hover {
+  background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Estilo do popup */
+.popup-oculto {
+  display: none;
+}
+
+.popup-conteudo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff; /* Fundo branco para o popup */
+  padding: 20px;
+  border-radius: 10px;
+  color: #030538; /* Texto em tom escuro */
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave para destacar */
+  width: 80%; /* Largura fixa para melhor adaptação */
+  max-width: 400px; /* Max-width para manter o tamanho adequado */
+  z-index: 2; /* Garantir que o popup fique acima de outros elementos */
+}
+
+.popup-conteudo .popup-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.popup-conteudo button {
+  background-color: #00796b; /* Azul mais forte para o botão */
+  color: white;
+  width: auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.popup-conteudo button:hover {
+  background-color: #004d40; /* Tom mais escuro para o hover */
+}
+
+/* Botão de Cancelar (leva ao início) */
+.popup-conteudo .cancelar {
+  background-color: #d9534f; /* Cor vermelha para o botão de cancelar */
+}
+
+.popup-conteudo .cancelar:hover {
+  background-color: #c9302c; /* Tom mais escuro de vermelho ao passar o mouse */
+}
+
+/* Efeito de blur no fundo */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px); /* Efeito de blur */
+  z-index: 1; /* Para ficar atrás do popup */
+}
+
+/* Adicionar alguns estilos para o título do popup */
+.popup-conteudo h3 {
+  color: #00796b; /* Cor mais clara para o título */
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.popup-conteudo input {
+  width: 80px;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #00796b; /* Cor do borda de acordo com o tema */
+  text-align: center;
+  font-size: 16px;
 }
 
 /* Responsividade */
-@media (max-width: 1200px) {
-  /* Ajuste para telas grandes (tablets e telas maiores) */
-  body {
-    padding: 20px;
-  }
-
-  #logo img {
-    max-width: 500px; /* Ajusta a largura máxima da logo para telas médias */
-  }
-
-  button {
-    max-width: 80%;
-  }
-}
-
-@media (max-width: 992px) {
-  /* Ajuste para tablets */
-  #logo img {
-    max-width: 450px; /* Ajusta um pouco para tablets */
-  }
-
-  button {
-    max-width: 90%;
-  }
-}
-
 @media (max-width: 768px) {
-  /* Ajuste para telas menores (smartphones em paisagem) */
-  #logo img {
-    max-width: 400px; /* Ajusta para um tamanho bom em dispositivos menores */
+  .produtos {
+    flex-direction: column; /* Alinha os produtos na vertical em telas menores */
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px; /* Margem nas laterais */
+    margin-right: 20px; /* Margem nas laterais */
   }
 
-  button {
-    max-width: 95%;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Ajuste para telas muito pequenas (smartphones em retrato) */
-  body {
-    padding: 10px;
+  .produto {
+    width: 80%; /* Deixa os produtos um pouco menores em telas menores */
   }
 
-  #logo img {
-    max-width: 350px; /* Aumenta um pouco a logo para telas pequenas */
+  .produto .produto-icon {
+    width: 100px; /* Ícones maiores em telas pequenas */
+    height: 90px; /* Ajusta a altura */
   }
 
-  button {
-    font-size: 16px;
-    padding: 12px;
+  .popup-conteudo {
+    width: 90%;
   }
 }
 
-@media (max-width: 375px) {
-  /* Ajuste para telas menores que 375px de largura (móveis mais compactos) */
-  #logo img {
-    max-width: 300px; /* Aumenta um pouco mais a logo para telas menores */
+@media (min-width: 769px) {
+  /* Quando a tela for maior que 768px, os produtos ficam lado a lado */
+  .produtos {
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os produtos em telas grandes */
   }
 
-  button {
-    max-width: 100%;
-    font-size: 14px;
-    padding: 10px;
+  .produto {
+    width: calc(33.33% - 20px); /* Produtos ocupam 1/3 do espaço */
   }
 }
