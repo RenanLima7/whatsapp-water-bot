@@ -1,0 +1,128 @@
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #030538;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 300px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button i {
+  margin-right: 10px;
+}
+
+/* Estilo da logo */
+#logo {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+#logo img {
+  width: 100%;
+  max-width: 600px; /* Aumenta o tamanho máximo da logo */
+  height: auto;
+}
+
+/* Botão Fazer Pedido */
+.irParaPedido {
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+  /* Ajuste para telas grandes (tablets e telas maiores) */
+  body {
+    padding: 20px;
+  }
+
+  #logo img {
+    max-width: 500px; /* Ajusta a largura máxima da logo para telas médias */
+  }
+
+  button {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Ajuste para tablets */
+  #logo img {
+    max-width: 450px; /* Ajusta um pouco para tablets */
+  }
+
+  button {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Ajuste para telas menores (smartphones em paisagem) */
+  #logo img {
+    max-width: 400px; /* Ajusta para um tamanho bom em dispositivos menores */
+  }
+
+  button {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ajuste para telas muito pequenas (smartphones em retrato) */
+  body {
+    padding: 10px;
+  }
+
+  #logo img {
+    max-width: 350px; /* Aumenta um pouco a logo para telas pequenas */
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+  /* Ajuste para telas menores que 375px de largura (móveis mais compactos) */
+  #logo img {
+    max-width: 300px; /* Aumenta um pouco mais a logo para telas menores */
+  }
+
+  button {
+    max-width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+}

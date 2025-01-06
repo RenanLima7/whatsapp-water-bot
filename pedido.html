@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pedidos</title>
+    <link rel="stylesheet" href="css/pedido.css">
+</head>
+<body>
+    <!-- Cabeçalho com a logo -->
+    <header>
+        <a href="index.html" id="logo">
+            <img src="images/logo.png" alt="Logo da Empresa">
+        </a>
+    </header>
+
+    <!-- Produtos -->
+    <div class="produtos">
+        <div class="produto" onclick="mostrarPopup('Água da Serra - 3,00')">
+            <img src="images/serra.png" alt="Água da Serra" class="produto-icon">
+            <h3>Água da Serra - 3,00</h3>
+        </div>
+        <div class="produto" onclick="mostrarPopup('Água Mineral - 7,00')">
+            <img src="images/mineral.png" alt="Água Mineral" class="produto-icon">
+            <h3>Água Mineral - 7,00</h3>
+        </div>
+    </div>
+
+    <!-- Overlay de fundo com blur (inicialmente invisível) -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Popup de Quantidade -->
+    <div id="popup" class="popup-oculto popup-conteudo">
+        <h3 id="produtoNome">Produto</h3>
+        <input type="number" id="quantidadeInput" placeholder="Quantidade" min="1" max="10">
+        <button id="enviarBtn" onclick="enviarPedido()">Enviar Pedido</button>
+        <button id="cancelarBtn" onclick="cancelarPopup()">Cancelar</button>
+    </div>
+
+    <script src="js/pedido.js"></script>
+</body>
+</html>
